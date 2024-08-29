@@ -9,6 +9,13 @@ Engage in battles using monster cards, each featuring specific combat attributes
 **Choose Action**: There are four options: Attack, Defend, Magic Attack, or Magic Defend.<br>
 **Resolve**: Compare the power (int value) of chosen attribute against the opponent’s corresponding attribute. Winning an encounter avoids damage, while losing results in HP loss.<br>
 
+### Hint
+
+Your opponent's values for all four attributes are hidden, but a hint is given during the game: <br>
+
+**(Basic) Attack, Defense:** Sum of the opponent's Attack and Defense values. <br>
+**Magic Attack, Magic Defense:** Magnitude of the difference between the opponent's Magic Attack and Magic Defense values.
+
 <hr>
 
 ### Rules for Resolving Actions:
