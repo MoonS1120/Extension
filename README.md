@@ -7,7 +7,7 @@ Engage in battles using monster cards, each featuring specific combat attributes
 **Start**: You start with 30 HP.<br>
 **Draw**: Each round, a monster is randomly picked as the opponent.<br>
 **Choose Action**: There are four options: Attack, Defend, Magic Attack, or Magic Defend.<br>
-**Resolve**: Compare the stat of chosen attribute against the opponent’s corresponding attribute. Winning an encounter avoids damage, while losing results in HP loss.<br>
+**Resolve**: Compare the power (int value) of chosen attribute against the opponent’s corresponding attribute. Winning an encounter avoids damage, while losing results in HP loss.<br>
 
 <hr>
 
