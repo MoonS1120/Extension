@@ -13,8 +13,8 @@ Engage in battles using monster cards, each featuring specific combat attributes
 
 Your opponent's values for all four attributes are hidden, but a hint is given during the game: <br>
 
-**(Basic) Attack, Defense:** Sum of the opponent's Attack and Defense values. <br>
-**Magic Attack, Magic Defense:** Magnitude of the difference between the opponent's Magic Attack and Magic Defense values.
+**(Basic) Attack, Defense**  → Sum of the opponent's Attack and Defense values. <br>
+**Magic Attack, Magic Defense**  → Magnitude of the difference between the opponent's Magic Attack and Magic Defense values.
 
 <hr>
 
