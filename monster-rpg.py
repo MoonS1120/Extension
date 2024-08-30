@@ -1,3 +1,4 @@
+import time
 from random import choice
 
 card_width = 40
@@ -57,9 +58,12 @@ def main():
         print('\033[33m'+'Round '+str(round)+'\033[0m')
         print('HP:', hp,'\n')
         input("Press enter to continue...")
+        time.sleep(1)
 
         opp_monster = choice(monsters)
         monsters.remove(opp_monster)
+        print("The cards are...")
+        time.sleep(0.8)
         for line1, line2 in zip(whole_card(my_monster), opp_card(opp_monster)):
             print(line1 + " "*5 + line2)
         print('')
@@ -70,46 +74,54 @@ def main():
                 break
             else:
                 print("Invalid input. Please enter 1, 2, 3, or 4.")
-
+        print('')
+        time.sleep(1)
         match action:
             case '1':
+                print("Your attack:", '\033[33m' + str(my_monster['attack']) + '\033[0m')
+                print("Opponent's defense:", '\033[33m' + str(opp_monster['defense']) + '\033[0m', '\n')
+                time.sleep(2)
                 if my_monster['attack'] > opp_monster['defense']:
+                    print("Successful attack")
+                    win += 1
+                else:
+                    print(f"Unsuccessful attack. HP decreases by {opp_monster['attack']}\n")
+                    hp -= opp_monster['attack']
+            case '2':
+                print("Your defense:", '\033[33m' + str(my_monster['defense']) + '\033[0m')
+                print("Opponent's attack:", '\033[33m' + str(opp_monster['attack']) + '\033[0m', '\n')
+                time.sleep(2)
+                if my_monster['defense'] > opp_monster['attack']:
                     print("Successful action")
                     win += 1
                 else:
-                    print("Unsuccessful action.")
-                    hp -= opp_monster['attack']
-                print("Your attack:", '\033[33m' + str(my_monster['attack']) + '\033[0m')
-                print("Opponent's defense:", '\033[33m' + str(opp_monster['defense']) + '\033[0m')
-            case '2':
-                if my_monster['defense'] > opp_monster['attack']:
-                    print("Successful action\n")
-                    win += 1
-                else:
-                    print("Unsuccessful action.\n")
+                    print(f"Unsuccessful defense. HP decreases by {opp_monster['attack'] - my_monster['defense']}\n")
                     hp -= opp_monster['attack'] - my_monster['defense']
-                print("Your defense:", '\033[33m' + str(my_monster['defense']) + '\033[0m')
-                print("Opponent's attack:", '\033[33m' + str(opp_monster['attack']) + '\033[0m')
             case '3':
-                if my_monster['magic_attack'] > opp_monster['magic_defense']:
-                    print("Successful action\n")
-                    win += 1
-                else:
-                    print("Unsuccessful action.")
-                    hp -= opp_monster['magic_attack']
                 print("Your Magic attack:", '\033[33m' + str(my_monster['magic_attack']) + '\033[0m')
-                print("Opponent's Magic defense:", '\033[33m' + str(opp_monster['magic_defense']) + '\033[0m')
-            case '4':
-                if my_monster['magic_defense'] > opp_monster['magic_attack']:
-                    print("Successful action\n")
+                print("Opponent's Magic defense:", '\033[33m' + str(opp_monster['magic_defense']) + '\033[0m', '\n')
+                time.sleep(2)
+                if my_monster['magic_attack'] > opp_monster['magic_defense']:
+                    print("Successful Magic attack!")
                     win += 1
                 else:
-                    print("Unsuccessful action.\n")
-                    hp -= opp_monster['magic_attack'] - my_monster['magic_defense']
+                    print(f"Unsuccessful Magic attack. HP decreases by {opp_monster['magic_attack']}")
+                    hp -= opp_monster['magic_attack']
+            case '4':
                 print("Your Magic defense:", '\033[33m' + str(my_monster['magic_defense']) + '\033[0m')
-                print("Opponent's Magic attack:", '\033[33m' + str(opp_monster['magic_attack']) + '\033[0m')
+                print("Opponent's Magic attack:", '\033[33m' + str(opp_monster['magic_attack']) + '\033[0m', '\n')
+                time.sleep(2)
+                if my_monster['magic_defense'] > opp_monster['magic_attack']:
+                    print("Successful Magic defense!")
+                    win += 1
+                else:
+                    print(f"Unsuccessful Magic defense. HP decreases by {opp_monster['magic_attack'] - my_monster['magic_defense']}")
+                    hp -= opp_monster['magic_attack'] - my_monster['magic_defense']
+                
         round += 1
+        time.sleep(2)
         print("\nThe cards were...")
+        time.sleep(1)
         for line1, line2 in zip(whole_card(my_monster), whole_card(opp_monster)):
             print(line1 + " "*5 + line2)
         print('')
