@@ -60,6 +60,6 @@ def main():
         print_box(line)
         
     time.sleep(1)
-    print("Final answer: ", *line)
+    print("\nFinal answer: ", *line)
 
 main()
