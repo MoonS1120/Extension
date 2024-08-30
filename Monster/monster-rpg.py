@@ -53,7 +53,7 @@ def main():
     win = 0
     hp = 30
 
-    while hp > 0 or len(monsters)==0:
+    while hp > 0 and len(monsters)!=0:
         my_monster = {'id':'0', 'name':'-', 'ethnicity':'-', 'description':'-', 'attack':18, 'defense':12, 'magic_attack':18, 'magic_defense':12, 'num1':'0', 'num2':'0', 'num3':'0'}
         print('\033[33m'+'Round '+str(round)+'\033[0m')
         print('HP:', hp,'\n')
