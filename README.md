@@ -1,4 +1,4 @@
-# Monster
+# Monster RPG
 
 ## Game Overview
 Engage in battles using monster cards, each featuring specific combat attributes: Attack, Defense, Magic Attack, and Magic Defense.
